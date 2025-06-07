@@ -1,10 +1,10 @@
 <header class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <a class="navbar-brand fw-bold">Quick Quiz</a>
+    <a class="navbar-brand fw-bold">Graff Quiz</a>
 
     <div class="navbar-nav ms-auto">
-      <a class="nav-link auth-link" href="">LOG IN</a>
-      <a class="nav-link auth-link" href="">SIGN UP</a>
+      <a class="nav-link auth-link" href="{{ url_for('login') }}">LOG IN</a>
+      <a class="nav-link auth-link" href="{{ url_for('register') }}">SIGN UP</a>
     </div>
   </div>
 </header>

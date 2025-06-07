@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-
 {% block content %}
 <main>
 
@@ -7,22 +6,23 @@
     <form action="{{ url_for('game') }}" method="POST">
     <fieldset>
         {% for q in questions %}
-        <div>
-            <h1></h1>
-          <legend>{{ q['question'] | unescape }}</legend>
-          <div>
-            <input type="radio" id="true" name="answer{{loop.index0}}" value="True" />
-            <label for="true">True</label>
-          </div>
-          <div>
-            <input type="radio" id="false" name="answer{{loop.index0}}" value="False" />
-            <label for="false">False</label>
+        <div class="question-section">
+          <legend class="question">{{loop.index}}. {{ q['question'] | unescape }}</legend>
+          <div class="answer-section">
+              <div class="answer-true">
+                <input type="radio" id="true" name="answer{{loop.index0}}" value="True" />
+                <label for="true" >True</label>
+              </div>
+              <div class="answer-false">
+                <input type="radio" id="false" name="answer{{loop.index0}}" value="False" />
+                <label for="false">False</label>
+              </div>
           </div>
         </div>
         {% endfor %}
 
-        <div>
-        <button type="submit">SUBMIT ANSWERS</button>
+        <div class="submit-answer-section">
+        <button class="btn submit-answer-btn" type="submit">SUBMIT ANSWERS</button>
         </div>
     </fieldset>
     </form>
