@@ -1,4 +1,5 @@
 import requests
+from database import db
 
 class Questions:
 
@@ -19,24 +20,31 @@ class Questions:
         return {"status": "fail", "error": f"STATUS:{response.status_code} JSON:{response.json()}"}
 
 
+#input for class score: current_player.id and db(Players)
 class Score:
 
-    def __init__(self):
-        self.score = 0
-        self.correct_answers = 0
-        self.answered_questions = 0
-        self.false_answers = 0
-        self.average_score = 0
+    def __init__(self,player_id,database):
+        self.player_id = player_id
+        self.database = database
+        self.player = db.session.execute(db.select(self.database).where(self.database.id == self.player_id)).scalar()
+        self.score = self.player.score
+        self.correct_answers = self.player.correct_answers
+        self.answered_questions = self.player.answered_questions
+        self.false_answers = self.player.false_answers
 
-    def check_answers(self,user_answers,correct_answers):
-        for i in range(len(correct_answers)):
-            if user_answers[i] == correct_answers[i]:
+    def check_answers(self,user_answers,correct_ans):
+        for i in range(len(correct_ans)):
+            if user_answers[i] == correct_ans[i]:
                 self.correct_answers += 1
 
-        self.answered_questions = len(user_answers)
-        self.average_score = (self.correct_answers/self.answered_questions) * 100
-        self.false_answers = self.answered_questions - self.false_answers
-        return (f"ANSWERED QUESTIONS:{self.answered_questions}\n"
-                f"CORRECT ANSWERS:{self.correct_answers}\n"
-                f"FALSE ANSWERS:{self.false_answers}\n"
-                f"AVERAGE SCORE:{self.average_score}%")
+        self.answered_questions += len(user_answers)
+        #score is depended on the NEW values of answered_questions and correct_answers
+        self.score = (self.correct_answers/self.answered_questions) * 100
+        self.false_answers += self.answered_questions - self.correct_answers
+
+        player_to_update = self.player
+        player_to_update.score = round(self.score,2)
+        player_to_update.answered_questions = self.answered_questions
+        player_to_update.correct_answers = self.correct_answers
+        player_to_update.false_answers = self.false_answers
+        return db.session.commit()

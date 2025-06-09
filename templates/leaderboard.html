@@ -13,43 +13,13 @@
         <tbody>
 
         <!-- for player in players -->
-          <tr class="rank-1">
-            <td>1</td> <!-- player.id -->
-            <td>ALEXGAMER</td><!-- player.name -->
-            <td>95.47</td><!-- player.score -->
+        {% for player in players: %}
+          <tr class="rank-{{loop.index}}">
+            <td>{{loop.index}}</td> <!-- player.id -->
+            <td>{{ player.name }}</td><!-- player.name -->
+            <td>{{ player.score }}%</td><!-- player.score -->
           </tr>
-          <tr class="rank-2">
-            <td>2</td>
-            <td>PROTAGGER</td>
-            <td>89.32</td>
-          </tr>
-          <tr class="rank-3">
-            <td>3</td>
-            <td>STREETKING</td>
-            <td>87.15</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>URBANART</td>
-            <td>84.98</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>SPRAYMASTER</td>
-            <td>82.47</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>WALLCRUSHER</td>
-            <td>79.83</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>GRAFFITIGOD</td>
-            <td>77.29</td>
-          </tr>
-
-
+        {% endfor %}
         </tbody>
       </table>
     </div>

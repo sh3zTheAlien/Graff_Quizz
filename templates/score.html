@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<main>
+    {% if current_user.is_authenticated: %}
+    <h1>"{{ current_user.name }}"</h1>
+    <h1>SCORE: "{{ player.score }}"</h1><br>
+    <h1>CORRECT_ANSWERS: "{{ player.correct_answers }} / {{ player.answered_questions }}"</h1><br>
+    {% else %}
+    <h1>SIGN UP TO START SEEING YOUR RESULTS AND GET PLACE IN LEADERBOARD</h1>
+    <h1><a href="{{ url_for('register') }}">SIGN UP NOW</a></h1>
+    {% endif %}
+    <a class="nav-link auth-link" href="{{ url_for('home') }}">RETURN IN HOME</a>
+</main>
+{% include 'footer.html' %}
+{% endblock %}

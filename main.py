@@ -1,20 +1,21 @@
-from flask import Flask, abort, render_template, redirect, url_for, flash, request
+from flask import Flask, render_template, redirect, url_for, flash, request
 from flask_bootstrap import Bootstrap5
 from flask_login import login_user, LoginManager, current_user, logout_user, login_required
-from werkzeug.security import generate_password_hash, check_password_hash
-from flask_sqlalchemy import SQLAlchemy
-from quiz import Questions,Score
+from sqlalchemy import desc
+from quiz import Score,Questions
 from forms import *
 from database import db,Players
 import html
 from flask_bcrypt import Bcrypt
+import os
+from dotenv import load_dotenv
+load_dotenv()
 #https://opentdb.com/api.php?amount=5&category=9&difficulty=medium&type=boolean
 
 query_manager = Questions(amount=5,difficulty='medium',question_type='boolean',category=9)
-quiz_score = Score()
 app = Flask(__name__)
-app.config["SECRET_KEY"] = 'sDS7a!3f0FISf0f0f*(9*Rf9-D(*29xA9GAFDF*(29t8f'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///players.db'
+app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("SQLALCHEMY_DATABASE_URI")
 app.jinja_env.filters['unescape'] = lambda text: html.unescape(text)
 bcrypt = Bcrypt(app)
 Bootstrap5(app)
@@ -22,20 +23,23 @@ db.init_app(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 
+
 @login_manager.user_loader
 def load_user(user_id):
     return db.get_or_404(Players, user_id)
 
+#FLASK ROUTES
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    result = db.session.execute(db.select(Players).order_by(desc(Players.score)))
+    players = result.scalars()
+    return render_template("index.html",players=players)
 
 @app.route("/login",methods=['GET','POST'])
 def login():
     login_form = LogInForm()
     if login_form.validate_on_submit() and request.method == 'POST':
-        name_given = request.form.get("name")
         #find user by name
         searched_user = db.session.execute(db.select(Players).where(Players.name == request.form.get("name"))).scalar()
         if searched_user and db.session.execute(db.select(Players).where(Players.email == searched_user.email)).scalar() and bcrypt.check_password_hash(searched_user.password,request.form.get("password")):
@@ -45,10 +49,6 @@ def login():
         if not searched_user:
             flash("That name does not exist, please try again.")
             return redirect(url_for('login'))
-
-        # if not email_is_valid:
-        #     flash("That email does not exist.")
-        #     return redirect(url_for('login'))
 
         if not bcrypt.check_password_hash(searched_user.password,request.form.get("password")):
             flash("The password does not exist, please try again.")
@@ -79,17 +79,45 @@ def logout():
     logout_user()
     return redirect(url_for('home'))
 
+
 @app.route("/quiz_game",methods=['GET','POST'])
 def game():
-    quiz = query_manager.get_questions()
-    if quiz["status"] == "success":
-        if request.method == 'POST':
-            user_answers = [request.form.get(f'answer{i}') for i in range(len(quiz["questions"]))]
-            correct_answers = [x["correct_answer"] for x in quiz["questions"]]
-            print(quiz_score.check_answers(user_answers,correct_answers))
-            return redirect(url_for('home'))
+    if current_user.is_authenticated:
+        quiz_score = Score(player_id=current_user.id, database=Players)
+        if request.method == 'POST': #First request can't be POST so that way we escape quiz from doing 2 requests.
+            user_answers = [request.form.get(f'answer{i}') for i in range(query_manager.amount)]
+            correct_answers = [request.form.get(f"corrected_answer{z}") for z in range(query_manager.amount)]
+            quiz_score.check_answers(user_answers, correct_answers)
+            return redirect(url_for('score',player_id=current_user.id))
+
+        quiz = query_manager.get_questions()
+
+        if not quiz["status"] == "success": # If returned JSON didn't contain questions, we inform user
+            return render_template("error.html", error=quiz["error"])
+
         return render_template("game.html",questions=quiz["questions"])
-    return render_template("error.html",error=quiz["error"])
+
+    else:
+        if request.method == 'POST':  # First request can't be POST so that way we escape quiz from doing 2 requests.
+            user_answers = [request.form.get(f'answer{i}') for i in range(query_manager.amount)]
+            correct_answers = [request.form.get(f"corrected_answer{z}") for z in range(query_manager.amount)]
+            return redirect(url_for('score',player_id="random_player"))
+
+        quiz = query_manager.get_questions()
+
+        if not quiz["status"] == "success":  # If returned JSON didn't contain questions, we inform user
+            return render_template("error.html", error=quiz["error"])
+
+        return render_template("game.html", questions=quiz["questions"])
+
+
+@app.route("/player_score/<player_id>")
+def score(player_id):
+    if current_user.is_authenticated:
+        player = db.session.execute(db.select(Players).where(Players.id == player_id)).scalar()
+        return render_template("score.html",player=player)
+    else:
+        return render_template("score.html")
 
 if __name__ == "__main__":
-    app.run(debug=True,port=5005)
+    app.run(port=5001)
