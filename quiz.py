@@ -32,12 +32,10 @@ class Score:
         self.answered_questions = self.player.answered_questions
         self.false_answers = self.player.false_answers
 
-    def check_answers(self,user_answers,correct_ans):
-        for i in range(len(correct_ans)):
-            if user_answers[i] == correct_ans[i]:
-                self.correct_answers += 1
+    def update_db_answers(self,user_ans,session_correct_ans):
 
-        self.answered_questions += len(user_answers)
+        self.correct_answers += session_correct_ans
+        self.answered_questions += len(user_ans)
         #score is depended on the NEW values of answered_questions and correct_answers
         self.score = (self.correct_answers/self.answered_questions) * 100
         self.false_answers += self.answered_questions - self.correct_answers

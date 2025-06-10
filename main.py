@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, flash, request
 from flask_bootstrap import Bootstrap5
-from flask_login import login_user, LoginManager, current_user, logout_user, login_required
+from flask_login import login_user, LoginManager, current_user, logout_user
 from sqlalchemy import desc
 from quiz import Score,Questions
 from forms import *
@@ -82,42 +82,27 @@ def logout():
 
 @app.route("/quiz_game",methods=['GET','POST'])
 def game():
-    if current_user.is_authenticated:
-        quiz_score = Score(player_id=current_user.id, database=Players)
-        if request.method == 'POST': #First request can't be POST so that way we escape quiz from doing 2 requests.
-            user_answers = [request.form.get(f'answer{i}') for i in range(query_manager.amount)]
-            correct_answers = [request.form.get(f"corrected_answer{z}") for z in range(query_manager.amount)]
-            quiz_score.check_answers(user_answers, correct_answers)
-            return redirect(url_for('score',player_id=current_user.id))
+    if request.method == 'POST': #First request can't be POST so that way we escape quiz from doing 2 requests.
+        user_answers = [request.form.get(f'answer{i}') for i in range(query_manager.amount)]
+        correct_answers = [request.form.get(f"corrected_answer{z}") for z in range(query_manager.amount)]
+        session_correct_answers = len([i for i in range(query_manager.amount) if user_answers[i] == correct_answers[i]])
+        if current_user.is_authenticated: #add answers in database and give back results
+            quiz_score = Score(player_id=current_user.id, database=Players)
+            quiz_score.update_db_answers(user_answers, session_correct_answers)
+        return redirect(url_for('score',session=session_correct_answers,questions_amount=query_manager.amount))
 
-        quiz = query_manager.get_questions()
+    quiz = query_manager.get_questions()
 
-        if not quiz["status"] == "success": # If returned JSON didn't contain questions, we inform user
-            return render_template("error.html", error=quiz["error"])
+    if not quiz["status"] == "success": # If returned JSON didn't contain questions, we inform user
+        return render_template("error.html", error=quiz["error"])
 
-        return render_template("game.html",questions=quiz["questions"])
-
-    else:
-        if request.method == 'POST':  # First request can't be POST so that way we escape quiz from doing 2 requests.
-            user_answers = [request.form.get(f'answer{i}') for i in range(query_manager.amount)]
-            correct_answers = [request.form.get(f"corrected_answer{z}") for z in range(query_manager.amount)]
-            return redirect(url_for('score',player_id="random_player"))
-
-        quiz = query_manager.get_questions()
-
-        if not quiz["status"] == "success":  # If returned JSON didn't contain questions, we inform user
-            return render_template("error.html", error=quiz["error"])
-
-        return render_template("game.html", questions=quiz["questions"])
+    return render_template("game.html",questions=quiz["questions"])
 
 
-@app.route("/player_score/<player_id>")
-def score(player_id):
-    if current_user.is_authenticated:
-        player = db.session.execute(db.select(Players).where(Players.id == player_id)).scalar()
-        return render_template("score.html",player=player)
-    else:
-        return render_template("score.html")
+@app.route("/player_score")
+def score():
+    return render_template("score.html",session=request.args.get("session"),ques_amount= request.args.get("questions_amount"))
+
 
 if __name__ == "__main__":
-    app.run(port=5001)
+    app.run(debug=False,port=5005)

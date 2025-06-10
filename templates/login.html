@@ -1,9 +1,34 @@
 {% from "bootstrap5/form.html" import render_form %}
 {% extends 'base.html' %}
 {% block content %}
-<div>
-<h1>LOG IN</h1>
-{{ render_form(form) }}
-</div>
+<main class="mb-4 login-form">
+  <div class="btn-home-section">
+    <a class="auth-link return-home-btn" href="{{ url_for('home') }}">RETURN HOME</a>
+  </div>
+
+  <div class="container">
+    <div class="row">
+
+        <div class="col-12">
+        <div class="login-brand">
+          <h1>LOGIN PAGE</h1>
+        </div>
+      </div>
+
+      {% with messages = get_flashed_messages()%}
+        {% if messages%}
+          {% for message in messages%}
+            <p class="flash">{{message}}</p>
+          {%endfor%}
+        {%endif%}
+      {%endwith%}
+
+
+      <div class="col-lg-10 col-md-12 mx-auto">
+        {{ render_form(form) }}
+      </div>
+    </div>
+  </div>
+</main>
 {% include 'footer.html' %}
 {% endblock %}

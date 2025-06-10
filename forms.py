@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired, URL, Email
+from wtforms.validators import DataRequired
 
 class LogInForm(FlaskForm):
     name = StringField("Name Goes Here",validators=[DataRequired("Enter your name.")])

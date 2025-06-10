@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 <main>
-
-
     <form action="{{ url_for('game') }}" method="POST">
     <fieldset>
         {% for q in questions %}
@@ -23,7 +21,7 @@
         {% endfor %}
 
         <div class="submit-answer-section">
-        <button class="btn submit-answer-btn" type="submit">SUBMIT ANSWERS</button>
+        <button class="btn auth-link" type="submit">SUBMIT ANSWERS</button>
         </div>
     </fieldset>
     </form>
