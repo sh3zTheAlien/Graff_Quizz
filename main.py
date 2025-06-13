@@ -23,12 +23,12 @@ db.init_app(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 
+with app.app_context():
+    db.create_all()
 
 @login_manager.user_loader
 def load_user(user_id):
     return db.get_or_404(Players, user_id)
-
-#FLASK ROUTES
 
 @app.route("/")
 def home():
@@ -42,7 +42,7 @@ def login():
     if login_form.validate_on_submit() and request.method == 'POST':
         #find user by name
         searched_user = db.session.execute(db.select(Players).where(Players.name == request.form.get("name"))).scalar()
-        if searched_user and db.session.execute(db.select(Players).where(Players.email == searched_user.email)).scalar() and bcrypt.check_password_hash(searched_user.password,request.form.get("password")):
+        if searched_user and db.session.execute(db.select(Players).where(Players.email == searched_user.email)).scalar() and bcrypt.check_password_hash(searched_user.password.encode('utf-8'),request.form.get("password").encode('utf-8')):
             login_user(searched_user)
             return redirect(url_for('home'))
 
@@ -66,7 +66,7 @@ def register():
 
         new_player = Players(name=request.form.get("name"),
                              email=request.form.get("email"),
-                             password=bcrypt.generate_password_hash(request.form.get("password"),12),
+                             password=bcrypt.generate_password_hash(request.form.get("password"),12).decode('utf-8'),
                              score=0,answered_questions=0,correct_answers=0,false_answers=0)
         db.session.add(new_player)
         db.session.commit()
@@ -82,21 +82,19 @@ def logout():
 
 @app.route("/quiz_game",methods=['GET','POST'])
 def game():
-    if request.method == 'POST': #First request can't be POST so that way we escape quiz from doing 2 requests.
+    if request.method == 'POST': #First request can't be POST so that way we escape questions from doing 2 requests.
         user_answers = [request.form.get(f'answer{i}') for i in range(query_manager.amount)]
         correct_answers = [request.form.get(f"corrected_answer{z}") for z in range(query_manager.amount)]
         session_correct_answers = len([i for i in range(query_manager.amount) if user_answers[i] == correct_answers[i]])
+        print(user_answers)
+        print(correct_answers)
         if current_user.is_authenticated: #add answers in database and give back results
             quiz_score = Score(player_id=current_user.id, database=Players)
             quiz_score.update_db_answers(user_answers, session_correct_answers)
         return redirect(url_for('score',session=session_correct_answers,questions_amount=query_manager.amount))
 
-    quiz = query_manager.get_questions()
-
-    if not quiz["status"] == "success": # If returned JSON didn't contain questions, we inform user
-        return render_template("error.html", error=quiz["error"])
-
-    return render_template("game.html",questions=quiz["questions"])
+    questions = query_manager.get_questions()
+    return render_template("game.html", questions=questions)
 
 
 @app.route("/player_score")

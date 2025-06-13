@@ -1,0 +1,904 @@
+{
+  "general": [
+    {
+      "id": "1",
+      "question": "The Great Wall of China is visible from space with the naked eye.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "2",
+      "question": "A group of flamingos is called a flamboyance.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "3",
+      "question": "The human brain uses approximately 20% of the body's total energy.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "4",
+      "question": "Lightning never strikes the same place twice.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "5",
+      "question": "Bananas are berries, but strawberries are not.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "6",
+      "question": "The Pacific Ocean is larger than all other oceans combined.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "7",
+      "question": "Honey never spoils.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "8",
+      "question": "Penguins live at both the North and South Poles.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "9",
+      "question": "The shortest war in history lasted 38 minutes.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "10",
+      "question": "Goldfish have a memory span of only 3 seconds.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "11",
+      "question": "The Statue of Liberty was a gift from France to the United States.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "12",
+      "question": "Mount Everest is the tallest mountain on Earth when measured from base to peak.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "13",
+      "question": "Sharks are older than trees as a species.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "14",
+      "question": "The human body has more bacterial cells than human cells.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "15",
+      "question": "Bulls are enraged by the color red.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "16",
+      "question": "The Amazon rainforest produces 20% of the world's oxygen.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "17",
+      "question": "A shrimp's heart is in its head.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "18",
+      "question": "There are more possible games of chess than atoms in the observable universe.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "19",
+      "question": "The Great Pyramid of Giza was the tallest man-made structure for over 3,800 years.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "20",
+      "question": "Polar bears have black skin under their white fur.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "21",
+      "question": "The tongue is the strongest muscle in the human body.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "22",
+      "question": "Octopuses have three hearts.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "23",
+      "question": "The Moon is moving away from Earth each year.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "24",
+      "question": "A group of crows is called a murder.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "25",
+      "question": "The human nose can distinguish about 1 million different scents.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "26",
+      "question": "Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "27",
+      "question": "Wombat feces are cube-shaped.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "28",
+      "question": "The longest recorded flight of a chicken is 13 seconds.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "29",
+      "question": "Diamonds are the hardest natural substance on Earth.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "30",
+      "question": "The human eye can see about 10 million colors.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "31",
+      "question": "Alaska is both the westernmost and easternmost state in the US.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "32",
+      "question": "A jiffy is an actual unit of time.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "33",
+      "question": "The unicorn is the national animal of Scotland.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "34",
+      "question": "Lobsters were once considered poor people's food.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "35",
+      "question": "The Eiffel Tower can grow up to 6 inches taller in summer.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "36",
+      "question": "A duck's quack doesn't echo.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "37",
+      "question": "The total weight of all ants on Earth is roughly equal to the weight of all humans.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "38",
+      "question": "Banging your head against a wall burns 150 calories an hour.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "39",
+      "question": "A group of pandas is called an embarrassment.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "40",
+      "question": "The dot over a lowercase 'i' or 'j' is called a tittle.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "41",
+      "question": "Russia has 11 time zones.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "42",
+      "question": "The average person walks past 36 murderers in their lifetime.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "43",
+      "question": "Sea otters hold hands while sleeping to prevent drifting apart.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "44",
+      "question": "The smallest bone in the human body is in the ear.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "45",
+      "question": "Coca-Cola was originally green.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "46",
+      "question": "A sneeze travels out of your mouth at over 100 mph.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "47",
+      "question": "The average person spends 6 months of their lifetime waiting for red lights to turn green.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "48",
+      "question": "Butterflies taste with their feet.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "49",
+      "question": "The longest place name in the world has 85 letters.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "50",
+      "question": "A group of owls is called a parliament.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "51",
+      "question": "The first computer bug was an actual bug.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "52",
+      "question": "Sloths can hold their breath longer than dolphins.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "53",
+      "question": "The heart of a blue whale is as large as a small car.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "54",
+      "question": "Elephants are afraid of mice.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "55",
+      "question": "The fingerprints of a koala are so indistinguishable from humans that they have on occasion been confused at a crime scene.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "56",
+      "question": "Bubble wrap was originally invented as wallpaper.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "57",
+      "question": "The average cloud weighs about a million pounds.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "58",
+      "question": "A group of cats is called a clowder.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "59",
+      "question": "The longest hiccupping fit lasted 68 years.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "60",
+      "question": "Peanuts are not nuts; they're legumes.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "61",
+      "question": "The population of Earth could fit inside Los Angeles if it had the same population density as New York City.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "62",
+      "question": "A crocodile cannot stick its tongue out.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "63",
+      "question": "The longest recorded time without sleep is 18 days.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "64",
+      "question": "Carrots were originally purple.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "65",
+      "question": "The human stomach gets an entirely new lining every 3-4 days.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "66",
+      "question": "Venus is the hottest planet in our solar system.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "67",
+      "question": "A pig's orgasm lasts 30 minutes.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "68",
+      "question": "The word 'set' has the most different meanings in the English language.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "69",
+      "question": "Avocados are toxic to birds.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "70",
+      "question": "The shortest commercial flight in the world lasts 47 seconds.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "71",
+      "question": "A group of jellyfish is called a smack.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "72",
+      "question": "The human brain is 60% fat.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "73",
+      "question": "Mosquitoes are the deadliest animals to humans.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "74",
+      "question": "The sandwich was named after the Earl of Sandwich.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "75",
+      "question": "A single strand of spaghetti is called a spaghetto.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "76",
+      "question": "The human body produces about 1.5 liters of saliva per day.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "77",
+      "question": "Fortune cookies were invented in China.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "78",
+      "question": "A group of rhinos is called a crash.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "79",
+      "question": "The opposite sides of a dice always add up to seven.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "80",
+      "question": "Dolphins have names for each other.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "81",
+      "question": "The average person checks their phone 96 times per day.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "82",
+      "question": "A group of pugs is called a grumble.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "83",
+      "question": "The human body contains enough iron to make a 3-inch nail.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "84",
+      "question": "Giraffes have the same number of neck vertebrae as humans.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "85",
+      "question": "The word 'mortgage' comes from French and means 'death pledge'.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "86",
+      "question": "A group of ferrets is called a business.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "87",
+      "question": "The human eye blinks approximately 17,000 times per day.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "88",
+      "question": "Hippos sweat pink.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "89",
+      "question": "The plastic things on the end of shoelaces are called aglets.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "90",
+      "question": "A group of hedgehogs is called a prickle.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "91",
+      "question": "The human body has more than 600 muscles.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "92",
+      "question": "Cashews grow on trees.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "93",
+      "question": "A group of leopards is called a leap.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "94",
+      "question": "The speed of light is exactly 300,000 kilometers per second.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "95",
+      "question": "Bananas are radioactive.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "96",
+      "question": "A group of zebras is called a dazzle.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "97",
+      "question": "The human heart beats approximately 100,000 times per day.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "98",
+      "question": "Turtles can breathe through their butts.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "99",
+      "question": "A group of frogs is called an army.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "100",
+      "question": "The human body is made up of approximately 37 trillion cells.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "101",
+      "question": "Iceland is covered in ice and Greenland is covered in green vegetation.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "102",
+      "question": "A group of starfish is called a galaxy.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "103",
+      "question": "The human brain weighs approximately 3 pounds.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "104",
+      "question": "Flamingos are born pink.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "105",
+      "question": "A group of squirrels is called a scurry.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "106",
+      "question": "The human body produces about 25,000 quarts of saliva in a lifetime.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "107",
+      "question": "Spiders are insects.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "108",
+      "question": "A group of peacocks is called an ostentation.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "109",
+      "question": "The human skeleton is made up of 206 bones at birth.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "110",
+      "question": "Bees can see ultraviolet light.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "111",
+      "question": "A group of wolves is called a pack.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "112",
+      "question": "The human body temperature is exactly 98.6°F for everyone.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "113",
+      "question": "Chameleons change color to blend in with their surroundings.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "114",
+      "question": "A group of rabbits is called a fluffle.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "115",
+      "question": "The human liver can regenerate itself.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "116",
+      "question": "Tomatoes are vegetables.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "117",
+      "question": "A group of hippos is called a bloat.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "118",
+      "question": "The human body is about 60% water.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "119",
+      "question": "Koalas sleep 22 hours a day.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "120",
+      "question": "A group of turtles is called a bale.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "121",
+      "question": "The human eye can distinguish between 10 million different colors.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "122",
+      "question": "Goldfish can live for over 40 years.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "123",
+      "question": "A group of geese in flight is called a skein.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "124",
+      "question": "The human body produces a new skeleton every 7 years.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "125",
+      "question": "Penguins mate for life.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "126",
+      "question": "A group of apes is called a shrewdness.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "127",
+      "question": "The human tongue has taste buds that can only detect sweet, sour, salty, and bitter.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "128",
+      "question": "Elephants are the only animals that can't jump.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "129",
+      "question": "A group of fish is always called a school.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "130",
+      "question": "The human brain uses glucose as its primary source of energy.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "131",
+      "question": "Ostriches bury their heads in sand when scared.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "132",
+      "question": "A group of lions is called a pride.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "133",
+      "question": "The human body has 5 senses.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "134",
+      "question": "Snakes are deaf.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "135",
+      "question": "A group of bears is called a sleuth.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "136",
+      "question": "The human body completely replaces itself every 7 years.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "137",
+      "question": "Camels store water in their humps.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "138",
+      "question": "A group of monkeys is called a troop.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "139",
+      "question": "The human body has 12 pairs of ribs.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "140",
+      "question": "Bats are blind.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "141",
+      "question": "A group of whales is called a pod.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "142",
+      "question": "The human body has more neurons in the brain than cells in the entire body.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "143",
+      "question": "Owls can turn their heads 360 degrees.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "144",
+      "question": "A group of elephants is called a herd.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "145",
+      "question": "The human body produces red blood cells in the bone marrow.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "146",
+      "question": "Sharks need to keep moving to survive.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "147",
+      "question": "A group of deer is called a herd.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "148",
+      "question": "The human body has the same number of hairs as a chimpanzee.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "149",
+      "question": "Goldfish turn white if kept in a dark room.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "150",
+      "question": "A group of horses is called a herd.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "151",
+      "question": "The human body's strongest muscle is the jaw muscle.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "152",
+      "question": "Porcupines can shoot their quills.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "153",
+      "question": "A group of dogs is called a pack.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "154",
+      "question": "The human body has more bacteria than human cells.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "155",
+      "question": "Cheetahs are the fastest land animals.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "156",
+      "question": "A group of cattle is called a herd.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "157",
+      "question": "The human body produces vitamin D when exposed to sunlight.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "158",
+      "question": "Hummingbirds can fly backwards.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "159",
+      "question": "A group of sheep is called a flock.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "160",
+      "question": "The human body has 46 chromosomes.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "161",
+      "question": "Kangaroos can't walk backwards.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "162",
+      "question": "A group of chickens is called a flock.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "163",
+      "question": "The human body's largest organ is the liver.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "164",
+      "question": "Woodpeckers don't get headaches from pecking.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "165",
+      "question": "A group of geese on the ground is called a gaggle.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "166",
+      "question": "The human body produces melatonin in the pineal gland.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "167",
+      "question": "Lobsters scream when boiled.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "168",
+      "question": "A group of ants is called a colony.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "169",
+      "question": "The human body has four chambers in the heart.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "170",
+      "question": "Flying fish can actually fly.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "171",
+      "question": "A group of bees is called a swarm.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "172",
+      "question": "The human body produces insulin in the pancreas.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "173",
+      "question": "Daddy longlegs are the most venomous spiders.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "174",
+      "question": "A group of butterflies is called a flutter.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "175",
+      "question": "The human body has two kidneys.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "176",
+      "question": "Eels are electric.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "177",
+      "question": "A group of locusts is called a swarm.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "178",
+      "question": "The human body produces adrenaline in the adrenal glands.",
+      "correct_answer": "true"
+    },
+    {
+      "id": "179",
+      "question": "Groundhogs can predict the weather.",
+      "correct_answer": "false"
+    },
+    {
+      "id": "180",
+      "question": "A group of termites is called a colony.",
+      "correct_answer": "true"
+    }
+  ]
+}

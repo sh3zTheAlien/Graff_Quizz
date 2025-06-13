@@ -1,5 +1,6 @@
-import requests
 from database import db
+import json
+from random import *
 
 class Questions:
 
@@ -14,11 +15,18 @@ class Questions:
         self.category = category
 
     def get_questions(self):
-        response = requests.get(f"https://opentdb.com/api.php?amount={self.amount}&category={self.category}&difficulty={self.difficulty}&type={self.question_type}")
-        if response.status_code == 200:
-            return {"status":"success","questions":response.json()["results"]}
-        return {"status": "fail", "error": f"STATUS:{response.status_code} JSON:{response.json()}"}
-
+        with open('data.json', 'r') as data_file:
+            questions = []
+            data = json.load(data_file)
+            # 401 is the len() of questions the json file has and 5 the questions presented.
+            # In future it will be estimated by amount of questions that the user has chosen to answer
+            random_nums = sample(range(0, 180), 5)
+            for index, num in enumerate(random_nums):
+                question = data["general"][num]["question"]
+                correct_answer = data["general"][num]["correct_answer"]
+                questions.append({"question": question,
+                                  "correct_answer": correct_answer})
+            return questions
 
 #input for class score: current_player.id and db(Players)
 class Score:
