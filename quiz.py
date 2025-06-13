@@ -20,7 +20,7 @@ class Questions:
             data = json.load(data_file)
             # 401 is the len() of questions the json file has and 5 the questions presented.
             # In future it will be estimated by amount of questions that the user has chosen to answer
-            random_nums = sample(range(0, 180), 5)
+            random_nums = sample(range(0, 180), 5)#replace 5 with self.amount
             for index, num in enumerate(random_nums):
                 question = data["general"][num]["question"]
                 correct_answer = data["general"][num]["correct_answer"]
