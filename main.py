@@ -26,6 +26,7 @@ login_manager.init_app(app)
 with app.app_context():
     db.create_all()
 
+
 @login_manager.user_loader
 def load_user(user_id):
     return db.get_or_404(Players, user_id)
@@ -93,7 +94,7 @@ def game():
             quiz_score.update_db_answers(user_answers, session_correct_answers)
         return redirect(url_for('score',session=session_correct_answers,questions_amount=query_manager.amount))
 
-    questions = query_manager.get_questions()
+    questions = query_manager.get_questions(type="cooking") # replace with
     return render_template("game.html", questions=questions)
 
 
@@ -103,4 +104,4 @@ def score():
 
 
 if __name__ == "__main__":
-    app.run(debug=False,port=5005)
+    app.run(debug=True,port=5002)

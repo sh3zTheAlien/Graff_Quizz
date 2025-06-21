@@ -17,3 +17,9 @@ class Players(UserMixin,db.Model):
     answered_questions: Mapped[int] = mapped_column(Integer, nullable=False)
     correct_answers: Mapped[int] = mapped_column(Integer, nullable=False)
     false_answers: Mapped[int] = mapped_column(Integer, nullable=False)
+
+# class QuestionsTF(db.Model):
+#     __tablename__ = "questions_tf"
+#     id: Mapped[int] = mapped_column(Integer,primary_key=True)
+#     question : Mapped[str] = mapped_column(String,nullable=False)
+#     correct_answer : Mapped[str] = mapped_column(String,nullable=False)

@@ -14,7 +14,7 @@ class Questions:
         self.question_type = question_type
         self.category = category
 
-    def get_questions(self):
+    def get_questions(self,type):
         with open('data.json', 'r') as data_file:
             questions = []
             data = json.load(data_file)
@@ -22,8 +22,9 @@ class Questions:
             # In future it will be estimated by amount of questions that the user has chosen to answer
             random_nums = sample(range(0, 180), 5)
             for index, num in enumerate(random_nums):
-                question = data["general"][num]["question"]
-                correct_answer = data["general"][num]["correct_answer"]
+                id = data[type][num]
+                question = id["question"]
+                correct_answer = id["correct_answer"]
                 questions.append({"question": question,
                                   "correct_answer": correct_answer})
             return questions
