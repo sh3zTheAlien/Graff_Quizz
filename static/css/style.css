@@ -543,13 +543,26 @@ main {
 
 @media (max-width: 576px){
 
+  .container-fluid{
+    margin-top:-140px;
+  }
+
   .navbar {
     height: 250px;
   }
 
+  .auth-link {
+    font-size: 0.9rem !important;
+    padding: 0.3rem 0.6rem !important;
+  }
+
   .navbar-brand {
-    font-size: 1.7rem !important;
+    font-size: 1.5rem !important;
     color:red !important;
+  }
+
+  .navbar-section{
+    margin-top:1px;
   }
 
   .hero-content {
@@ -631,13 +644,12 @@ main {
   }
 
   .navbar-brand {
-    height: 10px;
+    margin-top: -110px;
     font-size: 2.3rem !important;
     color:green !important;
   }
 
-    .navbar {
-    height: 140px;
-    padding: 0.25rem 0;
+  .navbar-section{
+     margin-top:2px;
   }
 }
