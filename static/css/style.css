@@ -544,13 +544,12 @@ main {
 @media (max-width: 576px){
 
   .navbar {
-    height: 150px;
-    padding: 0.25rem 0;
+    height: 250px;
   }
 
   .navbar-brand {
     font-size: 1.7rem !important;
-    color:white !important;
+    color:red !important;
   }
 
   .hero-content {
@@ -571,7 +570,7 @@ main {
 
   .navbar-brand {
     font-size: 2rem !important;
-    color:white !important;
+    color:yellow !important;
   }
 
   .auth-link {
@@ -634,7 +633,7 @@ main {
   .navbar-brand {
     height: 10px;
     font-size: 2.3rem !important;
-    color:white !important;
+    color:green !important;
   }
 
     .navbar {
