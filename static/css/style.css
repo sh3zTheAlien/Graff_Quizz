@@ -73,7 +73,7 @@ header, main, footer, .leaderboard-section {
 
 .auth-link {
     margin-top:20px;
-    font-size: 1.4rem;
+    font-size: 1.9rem;
     padding: 15px 30px;
     background-color: #007bff;
     border: none;
@@ -377,7 +377,7 @@ main {
     justify-content:center;
 }
 
-.submit-answer-section .auth-link {
+.submit-answer-section {
     font-size: 1.8rem; /* Bigger font size (was 1.4rem) */
     padding: 20px 40px; /* Bigger button (was 15px 30px) */
     min-width: 200px; /* Wider minimum width */
@@ -550,7 +550,7 @@ main {
 
   .navbar-brand {
     font-size: 1.7rem !important;
-    color:red !important;
+    color:white !important;
   }
 
   .hero-content {
@@ -560,7 +560,6 @@ main {
   .leaderboard-container {
     width: 98%;
   }
-
 }
 
 @media (min-width: 577px) and (max-width: 768px) {
@@ -572,7 +571,7 @@ main {
 
   .navbar-brand {
     font-size: 2rem !important;
-    color:yellow !important;
+    color:white !important;
   }
 
   .auth-link {
@@ -582,11 +581,6 @@ main {
 
   .footer {
     padding: 0.5rem 0;
-  }
-
-  main {
-    min-height: 40vh;
-    padding: 1rem 0;
   }
 
   .leaderboard-section {
@@ -629,15 +623,22 @@ main {
         font-size: 1.2rem;
         padding: 12px 24px;
     }
+}
 
-@media (min-width: 769px) and (max-width: 992px) {
+@media (min-width: 769px) and (max-width: 991px) {
+
   .navbar {
-    height: 140px;
-    padding: 0.25rem 0;
+    height: 180px;
   }
 
   .navbar-brand {
-    font-size: 2rem !important;
-    color:blue !important;
+    height: 10px;
+    font-size: 2.3rem !important;
+    color:white !important;
+  }
+
+    .navbar {
+    height: 140px;
+    padding: 0.25rem 0;
   }
 }
