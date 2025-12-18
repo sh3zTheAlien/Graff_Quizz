@@ -101,7 +101,3 @@ def game():
 @app.route("/player_score")
 def score():
     return render_template("score.html",session=request.args.get("session"),ques_amount= request.args.get("questions_amount"))
-
-
-if __name__ == "__main__":
-    app.run(debug=True,port=5002)
